@@ -17,5 +17,5 @@ so that I have quick access to emails and GitHub profiles
 * Make sure to `npm install`.
 
 
-[Employee Summary 1](./Assets/uiImage.png)
-[Employee Summary 2](./Assets/cliImage.png)
+![UI image](Assets/uiImage.png)
+![CLI image](Assets/cliImage.png)
