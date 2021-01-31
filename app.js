@@ -44,6 +44,7 @@ function init() {
             name: "officeNumber"
         }]).then(response => {
             manager = new Manager(response.managerName, response.managerID, response.managerEmail, response.officeNumber);
+            teamMates.push(manager);
             teamTitle = response.teamTitle;
             console.log("Next please provide employee information.")
             employeeInfo();
@@ -99,16 +100,9 @@ function employeeInfo() {
         if (answers.newEmployee === true) {
             employeeInfo();
         } else {
-            //renderHTML
-            // Check if the specified output directory already exists
-            var main = fs.readFileSync('./templates/main.html', 'utf8');
-            // The slashes and g => regular expressions (regex)
-            // This allows the replace function to replace all occurances of teamTitle.
-            // If I just did '{{teamTitle}}' then it only replaces the first instance.
-            main = main.replace(/{{teamTitle}}/g, teamTitle);
 
             if (!fs.existsSync(OUTPUT_DIR)) {
-                    // Since directory doesn't exist, create the specified directory
+                    // If directory doesn't exist, create the specified directory
                     fs.mkdirSync(OUTPUT_DIR);
                 }
                 // Write out the html page to a file
